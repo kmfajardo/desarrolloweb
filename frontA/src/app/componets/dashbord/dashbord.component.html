@@ -1,0 +1,42 @@
+<header class="p-3 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Oreja"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="#" class="nav-link px-2 text-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hogar</font></font></a></li>
+          <li><a href="#" class="nav-link px-2 text-white"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">inicio</font></font></a></li>
+          <li><a href="#" class="nav-link px-2 text-white"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Insertar</font></font></a></li>
+          <li><a href="#" class="nav-link px-2 text-white"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">eliminar</font></font></a></li>
+          <li><a href="#" class="nav-link px-2 text-white"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">actualizar</font></font></a></li>
+          <li><a href="#" class="nav-link px-2 text-white"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sobre nuestra empreza</font></font></a></li>
+        </ul>
+
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <input type="search" class="form-control form-control-dark" placeholder="Búsqueda..." aria-label="Búsqueda">
+        </form>
+
+        <div class="text-end">
+          <button type="button" (click)="logOut()" class="btn btn-outline-light me-2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LogOut</font></font></button>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  <section *ngIf="auth.user$ | async as user" class="py-5 text-center container">
+    
+ 
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+        <img [src]="user.picture" alt="150px" class="rounded">
+        <p>{{user.given_name}}</p>
+        <p>{{user.family_name}}</p>
+        <p>{{user.email}}</p>
+      <p class="lead text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{user | json}}</font></font></p>
+     
+    </div>
+  </div>
+</section>
+
