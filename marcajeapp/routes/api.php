@@ -17,3 +17,15 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//RUTAS DE EMPLEADO
+Route::get('/empleados', 'App\Http\Controllers\EmpleadoController@index');
+Route::post('/empleados', 'App\Http\Controllers\EmpleadoController@store');
+Route::put('/empleados/{id}', 'App\Http\Controllers\EmpleadoController@update');
+Route::delete('/empleados/{id}', 'App\Http\Controllers\EmpleadoController@destroy');
+
+//RUTAS DE ROL DE USUARIO
+Route::get('/roldeusuarios', 'App\Http\Controllers\RolDeUsuarioController@index');
+Route::post('/roldeusuarios', 'App\Http\Controllers\RolDeUsuarioController@store');
+Route::put('/roldeusuarios/{id}', 'App\Http\Controllers\RolDeUsuarioController@update');
+Route::delete('/roldeusuarios/{id}', 'App\Http\Controllers\RolDeUsuarioController@destroy');

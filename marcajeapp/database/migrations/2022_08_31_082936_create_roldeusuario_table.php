@@ -13,13 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('empleados', function (Blueprint $table) {
+        Schema::create('roldeusuarios', function (Blueprint $table) {
             //The bigIncrements method creates an auto-incrementing UNSIGNED BIGINT (primary key) equivalent column:
 
-            $table->bigIncrements('id_emp');
-            $table->string('name_emp');
-            $table->string('apellido_emp');
-            $table->string('dpi_emp');            
+            $table->bigIncrements('id_rol');
+            $table->string('user_rol_name');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('empleados');
+        Schema::dropIfExists('roldeusuarios');
     }
 };
