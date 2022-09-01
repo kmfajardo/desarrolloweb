@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Marcaje extends Model
 {
     use HasFactory;
-    protected $fillable =['id_emp', 'entrada', 'fecha_marcaje', 'hora_marcaje'];
+    protected $fillable =['id_emp', 'marcacion', 'fecha_marcaje', 'hora_marcaje'];
 }

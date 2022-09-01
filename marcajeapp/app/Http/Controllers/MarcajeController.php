@@ -40,7 +40,28 @@ class MarcajeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Needs empleado to store the data in
+        $empleados = Empleado::where('id_emp', $request->id_emp)->first(); //funcion of collection interface
+
+        //is_null — Finds whether a variable is null
+        $today_date = date("m.d.y");
+        $today_time = date("H:i:s"); 
+
+        if (is_null($marcaje)){ //marcaje de entrada
+            $marcaje = new Marcaje();
+            $marcaje->id_emp=$request->id_emp;
+            $marcaje->marcacion=1;
+            $marcaje->fecha_marcaje=$today_date;
+            $marcaje->hora_marcaje=$today_time;
+            $marcaje->save();
+        } else { //marcaje de salida
+            $marcaje = new Marcaje();
+            $marcaje->id_emp=$request->id_emp;
+            $marcaje->marcacion=0;
+            $marcaje->fecha_marcaje=$today_date;
+            $marcaje->hora_marcaje=$today_time;
+            $marcaje->save();
+        }        
 
     }
 

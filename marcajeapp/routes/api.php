@@ -29,3 +29,9 @@ Route::get('/roldeusuarios', 'App\Http\Controllers\RolDeUsuarioController@index'
 Route::post('/roldeusuarios', 'App\Http\Controllers\RolDeUsuarioController@store');
 Route::put('/roldeusuarios/{id}', 'App\Http\Controllers\RolDeUsuarioController@update');
 Route::delete('/roldeusuarios/{id}', 'App\Http\Controllers\RolDeUsuarioController@destroy');
+
+//RUTAS DE MARCAJE
+Route::get('/marcajes', 'App\Http\Controllers\MarcajeController@index');
+Route::post('/marcajes', 'App\Http\Controllers\MarcajeController@store');
+Route::put('/marcajes/{id}', 'App\Http\Controllers\MarcajeController@update');
+Route::delete('/marcajes/{id}', 'App\Http\Controllers\MarcajeController@destroy');
