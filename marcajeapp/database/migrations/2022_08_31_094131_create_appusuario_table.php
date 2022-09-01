@@ -20,12 +20,13 @@ return new class extends Migration
             $table->bigIncrements('id_user');
             $table->string('nombre_user');
             $table->string('usuario_pass');
-            $table->unsignedBigInteger('id_rol_fk');
-            $table->unsignedBigInteger('id_emp_fk');
+            $table->unsignedBigInteger('id_emp');
+            $table->unsignedBigInteger('id_rol');
             $table->timestamps();
 
-            $table->foreign('id_rol_fk')->references('id_rol')-on('roldeusuarios');
-            $table->foreign('id_emp_fk')->references('id_emp')-on('empleados');
+            $table->foreign('id_emp')->references('id_emp')->on('empleados');
+            $table->foreign('id_rol')->references('id_rol')->on('roldeusuarios');
+            
 
         });
     }
