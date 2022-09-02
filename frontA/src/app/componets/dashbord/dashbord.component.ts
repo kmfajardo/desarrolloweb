@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Route } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
 import Swal from 'sweetalert2';
 @Component({
@@ -22,7 +21,7 @@ export class DashbordComponent implements OnInit {
         toast: true,
         position: 'top-end',
         showConfirmButton: false,
-        timer: 5000,
+        timer: 3000,
         timerProgressBar: true,
         didOpen: (toast) => {
           toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -63,5 +62,4 @@ export class DashbordComponent implements OnInit {
     Nuevo(){
 
     }
-  
 }
