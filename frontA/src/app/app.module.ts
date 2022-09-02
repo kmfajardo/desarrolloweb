@@ -5,15 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComienzoComponent } from './componets/comienzo/comienzo.component';
 import { DashbordComponent } from './componets/dashbord/dashbord.component';
-
 // Import the module from the SDK
 import { AuthModule } from '@auth0/auth0-angular';
+import { ListComponent } from './Persona/list/list.component';
+import { AddComponent } from './Persona/add/add.component';
+import { EdditComponent } from './Persona/eddit/eddit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ComienzoComponent,
-    DashbordComponent
+    DashbordComponent,
+    ListComponent,
+    AddComponent,
+    EdditComponent
   ],
   imports: [
     BrowserModule,
