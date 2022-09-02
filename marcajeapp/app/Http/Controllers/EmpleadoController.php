@@ -40,9 +40,13 @@ class EmpleadoController extends Controller
         //
         $empleados = new Empleado();
 
+        $empleados->id_emp=$request->id_emp;
         $empleados->name_emp=$request->name_emp;
         $empleados->apellido_emp=$request->apellido_emp;
         $empleados->dpi_emp=$request->dpi_emp;
+        $empleados->created_at=$request->created_at;
+        $empleados->updated_at=$request->updated_at;
+
 
         $empleados->save();
     }
@@ -81,6 +85,7 @@ class EmpleadoController extends Controller
         //
         $empleados = Empleado::findOrFail($request->id);
 
+        $empleados->id_emp=$request->id_emp;
         $empleados->name_emp= $request->name_emp;
         $empleados->apellido_emp= $request->apellido_emp;
         $empleados->dpi_emp=$request->dpi_emp;
